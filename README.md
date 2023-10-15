@@ -11,7 +11,7 @@ Note: Ensure that you do not push any C file containing a main function in the r
 Example of Compilation:
 #
 ```bash :
-#
+
 #alex@ubuntu:~/c/printf$ cat main.c #
 #include <limits.h>
 #include <stdio.h>
