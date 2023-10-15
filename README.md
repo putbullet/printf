@@ -4,7 +4,7 @@ Compilation
 To compile your code, you can use the following command:
 
 ```bash :
-#
+
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 ```
 Note: Ensure that you do not push any C file containing a main function in the root directory of your project. You may create a test folder containing all your test files, including main functions. Our main files will include your main header file (main.h).
@@ -106,9 +106,9 @@ Tasks
     All the above options work well together.
 
 License
-
+``
     This project is not open-source and is for educational purposes only.
 
 Acknowledgments
-
+``
     putbullet - Project contributor
