@@ -3,14 +3,14 @@ Compilation
 
 To compile your code, you can use the following command:
 
-bash :
+```bash :
 #
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
-
+```
 Note: Ensure that you do not push any C file containing a main function in the root directory of your project. You may create a test folder containing all your test files, including main functions. Our main files will include your main header file (main.h).
 Example of Compilation:
 #
-bash :
+```bash :
 #
 #alex@ubuntu:~/c/printf$ cat main.c #
 #include <limits.h>
@@ -30,10 +30,11 @@ int main(void)
 }
 alex@ubuntu:~/c/printf$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 alex@ubuntu:~/c/printf$ ./printf
+```
 #
 Tasks
 0. I'm not going anywhere.
-
+``
     Write a function that produces output according to a format.
     Prototype: int _printf(const char *format, ...)
     Returns: the number of characters printed (excluding the null byte used to end output to strings)
