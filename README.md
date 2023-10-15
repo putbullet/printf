@@ -105,11 +105,8 @@ Tasks
 
     All the above options work well together.
 
-
-
-License
+License :
     This project is not open-source and is for educational purposes only.
 
-Acknowledgments
-``
+Acknowledgments :
     putbullet - Project contributor
