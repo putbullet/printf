@@ -34,7 +34,7 @@ alex@ubuntu:~/c/printf$ ./printf
 #
 Tasks
 0. I'm not going anywhere.
-``
+
     Write a function that produces output according to a format.
     Prototype: int _printf(const char *format, ...)
     Returns: the number of characters printed (excluding the null byte used to end output to strings)
@@ -105,8 +105,9 @@ Tasks
 
     All the above options work well together.
 
+
+
 License
-``
     This project is not open-source and is for educational purposes only.
 
 Acknowledgments
