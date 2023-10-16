@@ -9,14 +9,15 @@
  */
 int print_format(char specifier, va_list ap)
 {
-        int count = 0;
+	int count = 0;
 
-        if (specifier == 'c')
-                count = print_char(va_arg(ap, int));
-        else if (specifier == 's')
-                count = print_str(va_arg(ap, char *));
-        else
-                count += write(1, &specifier, 1);
+	if (specifier == 'c')
+		count = print_char(va_arg(ap, int));
+	else if (specifier == 's')
+		count = print_str(va_arg(ap, char *));
+	else
+		count += write(1, &specifier, 1);
 
-        return (count);
+	return (count);
 }
+
