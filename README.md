@@ -1,7 +1,6 @@
 Project Title: printf
-Compilation
 
-To compile your code, you can use the following command:
+To compile use the following command:
 
 ```bash :
 
