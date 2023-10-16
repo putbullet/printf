@@ -11,9 +11,10 @@
 
 
 /* Function prototypes */
-int print_char(int c);
-int print_str(char *str);
-int print_format(char specifier, va_list ap);
+int printf_char(int c);
+int printf_string(char *str);
+int printf_format(char specifier, va_list ap);
+int printf_int(int n);
 int _printf(const char *format, ...);
 
 #endif

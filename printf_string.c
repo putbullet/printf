@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_str - Prints a string to stdout
+ * printf_string - Prints a string to stdout
  * @s: The string to print
  *
  * Return: Number of characters printed
  */
-int print_str(char *s)
+int printf_string(char *s)
 {
 	int count = 0;
 
