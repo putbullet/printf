@@ -6,7 +6,7 @@
 #include <stdarg.h>
 #include <limits.h>
 #include <unistd.h>
-
+#include <string.h>
 
 
 

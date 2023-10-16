@@ -10,9 +10,14 @@ int print_str(char *s)
 {
 	int count = 0;
 
+	if (s == NULL)
+
+		s = "(null)";
+
 	while (*s)
 	{
-		count += write(1, s++, 1);
+		count += write(1, s, 1);
+		s++;
 	}
 
 	return (count);
