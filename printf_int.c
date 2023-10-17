@@ -2,12 +2,12 @@
 
 /**
  * printf_int - Prints an integer.
- * @n: The integer to be printed.
- *
+ * @ap: A va_list containing the integer to be printed.
  * Return: The number of characters printed.
  */
-int printf_int(int n)
+int printf_int(va_list ap)
 {
+	int n = va_arg(ap, int);
 	int count = 0;
 	char buffer[12];
 
