@@ -15,6 +15,10 @@ int (*printf_format(const char *specifier))(va_list)
 		{"d", printf_int},
 		{"i", printf_int},
 		{"b", printf_b},
+		{"u", printf_u},
+		{"o", printf_o},
+		{"x", printf_x},
+		{"X", printf_X},
 		{NULL, NULL}
 	};
 

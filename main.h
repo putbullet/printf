@@ -30,6 +30,11 @@ int printf_string(va_list args);
 int (*printf_format(const char *specifier))(va_list);
 int _printf(const char *format, ...);
 int countBinary(unsigned int num);
-int printf_unsigned(va_list args);
+int printf_u(va_list args);
+int printf_o(va_list args);
+int printf_x(va_list args);
+int printf_X(va_list args);
+void printf_lowerHex(unsigned int num, int *count);
+void printf_upperHex(unsigned int num, int *count);
 
 #endif
