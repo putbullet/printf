@@ -30,5 +30,6 @@ int printf_string(va_list args);
 int (*printf_format(const char *specifier))(va_list);
 int _printf(const char *format, ...);
 int countBinary(unsigned int num);
+int printf_unsigned(va_list args);
 
 #endif
