@@ -23,10 +23,12 @@ typedef struct type
 
 /* Function prototypes */
 int _putchar(char c);
+int printf_b(va_list args);
 int printf_char(va_list ap);
 int printf_int(va_list ap);
 int printf_string(va_list ap);
 int (*printf_format(const char *specifier))(va_list);
 int _printf(const char *format, ...);
+int countBinary(unsigned int num);
 
 #endif
