@@ -1,32 +1,58 @@
 #include "main.h"
 
 /**
- * printf_p - prints a pointer number.
- * @args: arguments.
- * Return: counter.
- * printf_X - prints a hexadecima num.
+ * print_pointer - convert and print an unsigned long int in hexadecimal
+ * @ptr: the address of the pointer to print
+ * @count: the number of bytes printed
+ *
+ * Description: This function is almost identical to print_lowerHex except
+ * it takes an unsigned long int instead of an int.
+ *
+ * Return: void
  */
+
+void printf_pointer(unsigned long ptr, int *count)
+{
+	int retVal;
+
+	if (ptr > 15)
+		print_pointer(ptr >> 4, count);
+
+	if (*count == -1)
+		return;
+
+	if ((ptr & 15) < 10)
+		retVal = _putchar('0' + (ptr & 15));
+	else
+		retVal = _putchar('a' + (ptr & 15) % 10);
+
+	if (retVal == -1)
+		*count = -1;
+	else
+		*count += retVal;
+}
+
+/**
+ * print_p - print a pointer address in lowercase hexadecimal format
+ * @args: va_list containing the pointer to print as the next element
+ *
+ * Return: the number of bytes printed
+ */
+
 int printf_p(va_list args)
 {
-	void *p;
-	char *s = "(nil)";
-	long int a;
-	int b;
-	int i;
+	int count = 0;
+	void *ptr = va_arg(args, void *);
 
-	p = va_arg(args, void*);
-	if (p == NULL)
-	{
-		for (i = 0; s[i] != '\0'; i++)
-		{
-			_putchar(s[i]);
-		}
-		return (i);
-	}
+	if (!ptr)
+		return (_printf("(nil)"));
 
-	a = (unsigned long int)p;
-	_putchar('0');
-	_putchar('x');
-	b = printf_X(a);
-	return (b + 2);
+	count = _printf("0x");
+
+	if (count == -1)
+		return (count);
+
+	printf_pointer((unsigned long) ptr, &count);
+
+	return (count);
 }

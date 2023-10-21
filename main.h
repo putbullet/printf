@@ -37,4 +37,5 @@ int printf_X(va_list args);
 void printf_lowerHex(unsigned int num, int *count);
 void printf_upperHex(unsigned int num, int *count);
 int printf_p(va_list args);
+void printf_pointer(unsigned long ptr, int *count);
 #endif
