@@ -20,6 +20,7 @@ int (*printf_format(const char *specifier))(va_list)
 		{"x", printf_x},
 		{"X", printf_X},
 		{"p", printf_p},
+		{"r", printf_r},
 		{NULL, NULL}
 	};
 

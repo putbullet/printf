@@ -38,4 +38,10 @@ void printf_lowerHex(unsigned int num, int *count);
 void printf_upperHex(unsigned int num, int *count);
 int printf_p(va_list args);
 void printf_pointer(unsigned long ptr, int *count);
+int printf_r(va_list args);
+int  print_number(unsigned int n);
+int countDigits(unsigned int num);
+int countOctal(unsigned int num);
+int countBinary(unsigned int num);
+int _strlen(char *str);
 #endif
