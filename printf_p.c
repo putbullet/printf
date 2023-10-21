@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_pointer - convert and print an unsigned long int in hexadecimal
+ * printf_pointer - convert and print an unsigned long int in hexadecimal
  * @ptr: the address of the pointer to print
  * @count: the number of bytes printed
  *
@@ -16,7 +16,7 @@ void printf_pointer(unsigned long ptr, int *count)
 	int retVal;
 
 	if (ptr > 15)
-		print_pointer(ptr >> 4, count);
+		printf_pointer(ptr >> 4, count);
 
 	if (*count == -1)
 		return;
@@ -33,7 +33,7 @@ void printf_pointer(unsigned long ptr, int *count)
 }
 
 /**
- * print_p - print a pointer address in lowercase hexadecimal format
+ * printf_p - print a pointer address in lowercase hexadecimal format
  * @args: va_list containing the pointer to print as the next element
  *
  * Return: the number of bytes printed
