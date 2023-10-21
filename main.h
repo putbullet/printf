@@ -44,4 +44,5 @@ int countDigits(unsigned int num);
 int countOctal(unsigned int num);
 int countBinary(unsigned int num);
 int _strlen(char *str);
+int rot13(va_list args);
 #endif
