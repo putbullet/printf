@@ -72,5 +72,6 @@ _All the above options work well together._
 **Conclusion**
 
 This project implements a feature-rich printf function in C, providing extensive support for various conversion specifiers, flag characters, and length modifiers. It offers a flexible and robust solution for formatted printing in C programs.
-*Contributors:*
+**Contributors:**
+
 putbullet
