@@ -1,87 +1,74 @@
-Project Title: printf
+Printf Project
 
-To compile use the following command:
+This project implements a custom printf function in C that replicates the functionality of the standard printf function. The function supports a variety of conversion specifiers and flag characters, providing a comprehensive solution for formatted printing in C programs.
+Compilation
 
-```bash :
+To compile the project, use the following command:
 
-$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
-```
+bash
+
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 
 Tasks
-0. I'm not going anywhere.
+Task 0: I'm not going anywhere.
 
-    Write a function that produces output according to a format.
-    Prototype: int _printf(const char *format, ...)
-    Returns: the number of characters printed (excluding the null byte used to end output to strings)
-    Supported conversion specifiers: c, s, %
-    You don’t have to handle flag characters, field width, precision, or length modifiers.
+    Implement a function that produces output according to a format.
+    Supported conversion specifiers: %c, %s, %%.
+    Returns: the number of characters printed (excluding the null byte used to end output to strings).
 
-1. Education is when you read the fine print.
+Education is when you read the fine print.
 
-    Handle the following conversion specifiers: d, i
-    You don’t have to handle flag characters, field width, precision, or length modifiers.
+    Handle conversion specifiers: %d, %i.
 
-2. With a face like mine, I do better in print (Advanced)
+With a face like mine, I do better in print (Advanced)
 
-    Handle the custom conversion specifier: b, which converts an unsigned int argument to binary.
+    Handle custom conversion specifier: %b (converts an unsigned int argument to binary).
 
-3. What one has not experienced, one will never understand in print (Advanced)
+Nothing in fine print is ever good news (Advanced)
 
-    Handle the following conversion specifiers: u, o, x, X.
-    You don’t have to handle flag characters, field width, precision, or length modifiers.
+    Handle conversion specifiers: %u, %o, %x, %X.
 
-4. Nothing in fine print is ever good news (Advanced)
+My weakness is wearing too much leopard print (Advanced)
 
     Use a local buffer of 1024 chars to call write as little as possible.
 
-5. My weakness is wearing too much leopard print (Advanced)
+How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print (Advanced)
 
-    Handle the custom conversion specifier: S, which prints the string. Non-printable characters are represented as \x followed by the ASCII code value in hexadecimal (upper case).
+    Handle custom conversion specifier: %S (prints the string with non-printable characters represented as \x followed by the ASCII code value in hexadecimal).
 
-6. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print (Advanced)
+The big print gives and the small print takes away (Advanced)
 
-    Handle the conversion specifier: p.
-    You don’t have to handle flag characters, field width, precision, or length modifiers.
+    Handle conversion specifier: %p.
 
-7. The big print gives and the small print takes away (Advanced)
+Sarcasm is lost in print (Advanced)
 
-    Handle the flag characters: +, space, #.
+    Handle flag characters: +, space, #.
 
-8. Sarcasm is lost in print (Advanced)
+Print some money and give it to us for the rain forests (Advanced)
 
-    Handle the length modifiers: l, h.
-    Supported conversion specifiers: d, i, u, o, x, X.
+    Handle length modifiers: l, h.
 
-9. Print some money and give it to us for the rain forests (Advanced)
+The negative is the equivalent of the composer's score, and the print the performance (Advanced)
 
-    Handle the field width for non-custom conversion specifiers.
+    Handle field width for non-custom conversion specifiers.
 
-10. The negative is the equivalent of the composer's score, and the print the performance (Advanced)
+It's depressing when you're still around and your albums are out of print (Advanced)
 
-    Handle the precision for non-custom conversion specifiers.
+    Handle precision for non-custom conversion specifiers.
 
-11. It's depressing when you're still around and your albums are out of print (Advanced)
+Every time that I wanted to give up, if I saw an interesting textile, print whatever, suddenly I would see a collection (Advanced)
 
     Handle the 0 flag character for non-custom conversion specifiers.
 
-12. Every time that I wanted to give up, if I saw an interesting textile, print whatever, suddenly I would see a collection (Advanced)
+Print is the sharpest and the strongest weapon of our party (Advanced)
 
     Handle the - flag character for non-custom conversion specifiers.
 
-13. Print is the sharpest and the strongest weapon of our party (Advanced)
+The flood of print has turned reading into a process of gulping rather than savoring (Advanced)
 
-    Handle the custom conversion specifier: r, which prints the reversed string.
+    Handle custom conversion specifier: %r (prints the reversed string).
 
-14. The flood of print has turned reading into a process of gulping rather than savoring (Advanced)
+All the above options work well together.
+Conclusion
 
-    Handle the custom conversion specifier: R, which prints the ROT13'ed string.
-
-15. *
-
-    All the above options work well together.
-
-License :
-    This project is not open-source and is for educational purposes only.
-
-Acknowledgments :
-    putbullet - Project contributor
+This project implements a feature-rich printf function in C, providing extensive support for various conversion specifiers, flag characters, and length modifiers. It offers a flexible and robust solution for formatted printing in C programs.
