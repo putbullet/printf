@@ -1,77 +1,135 @@
-**Printf Project**
+# C - printf
 
-This project implements a custom printf function in C that replicates the functionality of the standard printf function. The function supports a variety of conversion specifiers and flag characters, providing a comprehensive solution for formatted printing in C programs.
-**Compilation**
+## Description
+Create an simple exact replica of the printf function found in the C programming language. Using Variadic functions, structs, and multiple helper functions, the program we created will be able display inputed characters, strings, integers, and decimals (base 10). Whatever format specifier you use with the replica function, should display the same results when used by the actual printf function. This project is to show an alternative method of creating your very own simple printf function in the C programming language.
 
-To compile the project, use the following command:
+If successfully compiled and executed, the function should return the number of characters printed (excluding the null byte used to end output to strings). And if it fails, then the function should return a `(-1)` upon error and `"(null)"` if the string argument takes in NULL. If the format specifier is unkown, then the output would print out the format specifier as a string.
 
-bash
+The code was made to handle all the format specifiers, but because of the simplicity of our code, we only used 5 so far. In the future, we will update the printf repository to handle more format specifiers.
 
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
 
-**Tasks**
-_Task 0: I'm not going anywhere._
 
-    Implement a function that produces output according to a format.
-    Supported conversion specifiers: %c, %s, %%.
-    Returns: the number of characters printed (excluding the null byte used to end output to strings).
 
-_Education is when you read the fine print._
+### Example of Format Specifierss
+The program will replicate the effects of the listed % format specifiers as when used with printf.
 
-    Handle conversion specifiers: %d, %i.
+Function name | Description | Format Specifier
+--- | --- | ---
+`_print_char` | Prints a single character | `%c`
+`_print_string` | Prints a string of characters | `%s`
+`_print_percent` | Prints a % | `%%`
+`_print_int` | Prints an integer in base 10| `%d` & `%i`
+`_print_reverse` | Prints the string in reverse | `r`
+`_print_rot13` | Converts the string into Rot13 | `R`
+`_print_binary` | Prints the binary form of the integer | `b`
+`_print_unsigned` | Prints an unsigned integer | `u`
+`_print_octal` | Prints and octal number | `o`
+`_print_hex_l` | Prints the lower case hexidecimal number | `x`
+`_print_hex_u` | Prints the upper case hexidecimal number | `X`
 
-_With a face like mine, I do better in print (Advanced)_
 
-    Handle custom conversion specifier: %b (converts an unsigned int argument to binary).
+### Compilation
 
-_Nothing in fine print is ever good news (Advanced)_
+Example : 
+```
+$ gcc -Wall -Werror -Wextra -pedantic *.c
+```
+or (if you want to test for unknown format specifiers)
 
-    Handle conversion specifiers: %u, %o, %x, %X.
+```
+$ gcc -Wall -Werror -Wextra -pedantic -Wno-format *.c
+```
 
-_My weakness is wearing too much leopard print (Advanced)_
 
-    Use a local buffer of 1024 chars to call write as little as possible.
+### The main.c File Test
+You'll make a main.c file to test the program, in order to see if the custom _printf function works exactly like how regular printf manages to display the number of characters printed.
+The main.c file should contain the code displayed below. (Feel free to change the code inside main.c to test for any other test cases not currently displayed.)
+```
+root@ubuntu:~/c/printf$ cat main.c
+#include <limits.h>
+#include <stdio.h>
+#include "holberton.h"
 
-_How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print (Advanced)_
+/**
+ * main - Entry point
+ *
+ * Return: Always 0
+ */
+int main(void)
+{
+    int len;
+    int len2;
+    unsigned int ui;
+    void *addr;
 
-    Handle custom conversion specifier: %S (prints the string with non-printable characters represented as \x followed by the ASCII code value in hexadecimal).
-
-_The big print gives and the small print takes away (Advanced)_
-
-    Handle conversion specifier: %p.
-
-_Sarcasm is lost in print (Advanced)_
-
-    Handle flag characters: +, space, #.
-
-_Print some money and give it to us for the rain forests (Advanced)_
-
-    Handle length modifiers: l, h.
-
-_The negative is the equivalent of the composer's score, and the print the performance (Advanced)_
-
-    Handle field width for non-custom conversion specifiers.
-
-_It's depressing when you're still around and your albums are out of print (Advanced)_
-
-    Handle precision for non-custom conversion specifiers.
-
-_Every time that I wanted to give up, if I saw an interesting textile, print whatever, suddenly I would see a collection (Advanced)_
-
-    Handle the 0 flag character for non-custom conversion specifiers.
-
-_Print is the sharpest and the strongest weapon of our party (Advanced)_
-
-    Handle the - flag character for non-custom conversion specifiers.
-
-_The flood of print has turned reading into a process of gulping rather than savoring (Advanced)_
-
-    Handle custom conversion specifier: %r (prints the reversed string).
-
-_All the above options work well together._
-**Conclusion**
-
-This project implements a feature-rich printf function in C, providing extensive support for various conversion specifiers, flag characters, and length modifiers. It offers a flexible and robust solution for formatted printing in C programs.
-**Contributors:**
-
-putbullet
+    len = _printf("Let's try to printf a simple sentence.\n");
+    len2 = printf("Let's try to printf a simple sentence.\n");
+    ui = (unsigned int)INT_MAX + 1024;
+    addr = (void *)0x7ffe637541f0;
+    _printf("Length:[%d, %i]\n", len, len);
+    printf("Length:[%d, %i]\n", len2, len2);
+    _printf("Negative:[%d]\n", -762534);
+    printf("Negative:[%d]\n", -762534);
+    _printf("Unsigned:[%u]\n", ui);
+    printf("Unsigned:[%u]\n", ui);
+    _printf("Unsigned octal:[%o]\n", ui);
+    printf("Unsigned octal:[%o]\n", ui);
+    _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    _printf("Character:[%c]\n", 'H');
+    printf("Character:[%c]\n", 'H');
+    _printf("String:[%s]\n", "I am a string !");
+    printf("String:[%s]\n", "I am a string !");
+    _printf("Address:[%p]\n", addr);
+    printf("Address:[%p]\n", addr);
+    len = _printf("Percent:[%%]\n");
+    len2 = printf("Percent:[%%]\n");
+    _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
+    _printf("Unknown:[%r]\n");
+    printf("Unknown:[%r]\n");
+    return (0);
+}
+```
+### Output Check
+Your output should after compiling the program should look something like what's displayed below.
+```
+root@ubuntu:~/c/printf$ gcc -Wall -Wextra -Werror -pedantic -Wno-format *.c
+root@ubuntu:~/c/printf$ ./printf
+Let's try to printf a simple sentence.
+Let's try to printf a simple sentence.
+Length:[39, 39]
+Length:[39, 39]
+Negative:[-762534]
+Negative:[-762534]
+Unsigned:[2147484671]
+Unsigned:[2147484671]
+Unsigned octal:[20000001777]
+Unsigned octal:[20000001777]
+Unsigned hexadecimal:[800003ff, 800003FF]
+Unsigned hexadecimal:[800003ff, 800003FF]
+Character:[H]
+Character:[H]
+String:[I am a string !]
+String:[I am a string !]
+Address:[0x7ffe637541f0]
+Address:[0x7ffe637541f0]
+Percent:[%]
+Percent:[%]
+Len:[12]
+Len:[12]
+Unknown:[%r]
+Unknown:[%r]
+root@ubuntu:~/c/printf$
+```
+### Bugs
+It should be noted that our code does not handle the following conditions:
+* You don’t have to reproduce the buffer handling of the C library printf function.
+* You don’t have to handle the flag characters.
+* You don’t have to handle field width.
+* You don’t have to handle precision.
+* You don’t have to handle the length modifiers.
+### About
+All files were created and compiled on `Ubuntu 20.04.6 LTS`
+## Authors
+* **Soulaimane** - [putbullet](https://github.com/putbullet)
